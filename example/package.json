@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "postcss -o dist/main.css ./*.css"
+  },
+  "devDependencies": {
+    "postcss": "^8.3.0",
+    "postcss-cli": "^9.1.0"
+  }
+}

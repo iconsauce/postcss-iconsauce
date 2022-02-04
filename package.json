@@ -1,0 +1,52 @@
+{
+    "name": "postcss-iconsauce",
+    "version": "1.0.0",
+    "description": "PostCSS plugin for Iconsauce",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "license": "MIT",
+    "sideEffects": false,
+    "bugs": {
+      "url": "https://github.com/iconsauce/postcss-iconsauce/issues"
+    },
+    "homepage": "https://github.com/iconsauce/postcss-iconsauce#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/iconsauce/postcss-iconsauce.git"
+    },
+    "keywords": [
+      "postcss",
+      "postcss-plugin",
+      "iconsauce"
+    ],
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "dev": "tsc --watch",
+      "build": "tsc",
+      "lint": "eslint --ignore-path .eslintignore",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "lint:fix": "npm run lint -- --fix"
+    },
+    "dependencies": {
+      "@iconsauce/core": "^0.0.1"
+    },
+    "peerDependencies": {
+      "postcss": "^8.0.0"
+    },
+    "devDependencies": {
+      "@types/debug": "^4.1.5",
+      "@types/jest": "^26.0.23",
+      "@types/node": "^15.6.1",
+      "@types/svg2ttf": "^5.0.1",
+      "@types/svgicons2svgfont": "^10.0.1",
+      "@typescript-eslint/eslint-plugin": "^5.10.1",
+      "@typescript-eslint/parser": "^5.10.1",
+      "eslint": "^8.7.0",
+      "prettier": "^2.5.1",
+      "typescript": "^4.4.3",
+      "postcss": "^8.3.0",
+      "postcss-nesting": "^10.1.2"
+    }
+  }
