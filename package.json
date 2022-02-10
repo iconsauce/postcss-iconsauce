@@ -15,16 +15,18 @@
       "url": "git+https://github.com/iconsauce/postcss-iconsauce.git"
     },
     "keywords": [
+      "font",
+      "icon",
+      "iconsauce",
       "postcss",
-      "postcss-plugin",
-      "iconsauce"
+      "postcss-plugin"
     ],
     "files": [
-      "dist"
+      "lib"
     ],
     "scripts": {
       "dev": "tsc --watch",
-      "build": "tsc",
+      "build": "tsc -d",
       "lint": "eslint --ignore-path .eslintignore",
       "test": "echo \"Error: no test specified\" && exit 1",
       "lint:fix": "npm run lint -- --fix"
