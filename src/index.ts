@@ -6,7 +6,6 @@ const plugin = (): Plugin => {
     postcssPlugin: 'postcss-iconsauce',
     async AtRule (rule) {
       if (rule.name === 'iconsauce') {
-        console.log(parse(await build()))
         rule.replaceWith(parse(await build()))
       }
     },
