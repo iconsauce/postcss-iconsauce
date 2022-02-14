@@ -1,6 +1,6 @@
 {
     "name": "postcss-iconsauce",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "PostCSS plugin for Iconsauce",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -33,7 +33,7 @@
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
-      "@iconsauce/core": "^0.0.7"
+      "@iconsauce/core": "^0.0.8"
     },
     "peerDependencies": {
       "postcss": "^8.0.0"
