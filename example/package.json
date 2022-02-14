@@ -3,6 +3,7 @@
     "build": "postcss -o dist/main.css ./*.css"
   },
   "devDependencies": {
+    "material-design-icons-updated": "^7.0.0",
     "postcss": "^8.3.0",
     "postcss-cli": "^9.1.0"
   }
