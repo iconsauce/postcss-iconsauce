@@ -1,12 +1,13 @@
 import { parse, Plugin } from 'postcss'
 import { build } from '@iconsauce/core'
+import { Config } from '@iconsauce/core/src/interface/config'
 
-const plugin = (): Plugin => {
+const plugin = (configuration?: Config): Plugin => {
   return {
     postcssPlugin: 'postcss-iconsauce',
     async AtRule (rule) {
       if (rule.name === 'iconsauce') {
-        rule.replaceWith(parse(await build()))
+        rule.replaceWith(parse(await build(configuration)))
       }
     },
   }
