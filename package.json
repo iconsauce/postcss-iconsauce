@@ -1,6 +1,6 @@
 {
     "name": "postcss-iconsauce",
-    "version": "0.3.1",
+    "version": "1.0.2",
     "description": "PostCSS plugin for Iconsauce",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -16,24 +16,23 @@
       "lint:fix": "npm run lint -- --fix"
     },
     "dependencies": {
-      "@iconsauce/config": "file:../iconsauce-config",
-      "@iconsauce/core": "file:../iconsauce"
+      "@iconsauce/config": "^0.0.3",
+      "@iconsauce/core": "^1.0.0"
     },
     "peerDependencies": {
       "postcss": "^8.0.0"
     },
     "devDependencies": {
-      "@types/debug": "^4.1.5",
-      "@types/jest": "^26.0.23",
-      "@types/node": "^15.6.1",
+      "@types/debug": "^4.1.7",
+      "@types/jest": "^27.4.1",
+      "@types/node": "^16.11.26",
       "@types/svg2ttf": "^5.0.1",
       "@types/svgicons2svgfont": "^10.0.1",
       "@typescript-eslint/eslint-plugin": "^5.10.1",
       "@typescript-eslint/parser": "^5.10.1",
-      "eslint": "^8.7.0",
-      "postcss": "^8.3.0",
+      "eslint": "^8.10.0",
+      "postcss": "^8.4.7",
       "postcss-nesting": "^10.1.2",
-      "prettier": "^2.5.1",
       "typescript": "^4.4.3"
     },
     "bugs": {
