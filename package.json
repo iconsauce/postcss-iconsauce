@@ -16,8 +16,8 @@
       "lint:fix": "npm run lint -- --fix"
     },
     "dependencies": {
-      "@iconsauce/config": "^0.0.2",
-      "@iconsauce/core": "^0.5.0"
+      "@iconsauce/config": "file:../iconsauce-config",
+      "@iconsauce/core": "file:../iconsauce"
     },
     "peerDependencies": {
       "postcss": "^8.0.0"

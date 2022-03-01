@@ -1,6 +1,6 @@
 import { parse, Plugin } from 'postcss'
 import { PathLike } from 'fs'
-import { build } from '@iconsauce/core'
+import { build, buildCSS as css } from '@iconsauce/core'
 import { IconsauceConfig } from '@iconsauce/config'
 import { Config } from '@iconsauce/config/src/interface/config'
 
@@ -9,11 +9,18 @@ const plugin = (configOrPath?: Config | PathLike): Plugin => {
     postcssPlugin: 'postcss-iconsauce',
     async AtRule (rule) {
       if (rule.name === 'iconsauce') {
+        let config: Config
         if (typeof configOrPath === 'string' ) {
-          rule.replaceWith(parse(await build(new IconsauceConfig(configOrPath))))
+          config = new IconsauceConfig(configOrPath)
         } else {
-          rule.replaceWith(parse(await build(configOrPath as Config ?? new IconsauceConfig())))
+          config = configOrPath as Config
         }
+        await build(config).then(async (data: { dictionary: Map<string, PathLike>, list: Map<string, PathLike> } | undefined) => {
+          if (data === undefined) {
+            return ''
+          }
+          rule.replaceWith(parse(await css(config, data.list)))
+        })
       }
     },
   }
