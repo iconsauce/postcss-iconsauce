@@ -13,7 +13,11 @@ const plugin = (configOrPath?: Config | PathLike): Plugin => {
         if (typeof configOrPath === 'string' ) {
           config = new IconsauceConfig(configOrPath)
         } else {
-          config = configOrPath as Config
+          if (configOrPath === undefined) {
+            config = new IconsauceConfig()
+          } else {
+            config = configOrPath as Config
+          }
         }
         await build(config).then(async (data: { dictionary: Map<string, PathLike>, list: Map<string, PathLike> } | undefined) => {
           if (data === undefined) {
