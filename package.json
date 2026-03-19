@@ -1,6 +1,6 @@
 {
     "name": "postcss-iconsauce",
-    "version": "1.4.2",
+    "version": "1.5.0",
     "description": "PostCSS plugin for Iconsauce",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
