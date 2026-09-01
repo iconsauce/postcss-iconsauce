@@ -41,7 +41,7 @@
     "@types/node": "25.3.3",
     "eslint": "9.39.3",
     "jest": "30.3.0",
-    "postcss": "8.5.18",
+    "postcss": "8.5.26",
     "ts-jest": "29.4.9",
     "typescript": "6.0.3",
     "typescript-eslint": "8.60.0"
