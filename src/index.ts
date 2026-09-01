@@ -1,7 +1,6 @@
-import { parse, Plugin } from 'postcss'
-import { PathLike } from 'fs'
-import { build, buildCSS as css } from '@iconsauce/core'
-import { IconsauceConfig } from '@iconsauce/config'
+import { parse, type Plugin } from 'postcss'
+import { type PathLike } from 'fs'
+import { build, buildCSS as css, IconsauceConfig } from '@iconsauce/core'
 
 const plugin = (configPath?: PathLike ): Plugin => {
   return {
@@ -20,8 +19,6 @@ const plugin = (configPath?: PathLike ): Plugin => {
   }
 }
 
-export const postcss = true
-
 plugin.postcss = true
 
-module.exports = plugin
+export = plugin

@@ -1,0 +1,21 @@
+name: Build & Test
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - '**'
+  workflow_call:
+jobs:
+  test:
+    name: Node on ubuntu-latest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: iconsauce/.github/.github/actions/setup-node@main
+      - name: Build
+        run: npm run build
+      - name: Run Tests
+        run: npm run test

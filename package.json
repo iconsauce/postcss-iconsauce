@@ -1,54 +1,64 @@
 {
-    "name": "postcss-iconsauce",
-    "version": "1.5.0",
-    "description": "PostCSS plugin for Iconsauce",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "license": "MIT",
-    "sideEffects": false,
-    "files": [
-      "lib"
-    ],
-    "scripts": {
-      "build": "tsc -d",
-      "dev": "tsc --watch",
-      "lint": "eslint --ignore-path .eslintignore",
-      "lint:fix": "npm run lint -- --fix",
-      "prepublishOnly": "npm run build"
+  "name": "postcss-iconsauce",
+  "version": "2.0.0",
+  "description": "PostCSS plugin for Iconsauce",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
     },
-    "dependencies": {
-      "@iconsauce/config": "^0.5.1",
-      "@iconsauce/core": "^1.2.4"
-    },
-    "peerDependencies": {
-      "postcss": "^8.0.0"
-    },
-    "devDependencies": {
-      "@types/debug": "^4.1.7",
-      "@types/jest": "^27.4.1",
-      "@types/node": "^16.11.26",
-      "@types/svg2ttf": "^5.0.1",
-      "@types/svgicons2svgfont": "^10.0.1",
-      "@typescript-eslint/eslint-plugin": "^5.10.1",
-      "@typescript-eslint/parser": "^5.10.1",
-      "eslint": "^8.10.0",
-      "postcss": "^8.4.14",
-      "postcss-nesting": "^10.1.2",
-      "typescript": "^4.7.4"
-    },
-    "bugs": {
-      "url": "https://github.com/iconsauce/postcss-iconsauce/issues"
-    },
-    "homepage": "https://github.com/iconsauce/postcss-iconsauce#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/iconsauce/postcss-iconsauce.git"
-    },
-    "keywords": [
-      "font",
-      "icon",
-      "iconsauce",
-      "postcss",
-      "postcss-plugin"
-    ]
-  }
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc --declaration -p tsconfig.build.json",
+    "postbuild": "cp -r ./build/src/. ./lib",
+    "clean": "rm -rf build lib coverage",
+    "dev": "tsc --watch",
+    "lint": "eslint --fix",
+    "prepublishOnly": "npm run build && npm run test",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@iconsauce/core": "^2.0.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.29.0",
+    "@babel/preset-typescript": "7.28.5",
+    "@types/jest": "30.0.0",
+    "@types/node": "25.3.3",
+    "eslint": "9.39.3",
+    "jest": "30.3.0",
+    "postcss": "8.5.18",
+    "ts-jest": "29.4.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.60.0"
+  },
+  "bugs": {
+    "url": "https://github.com/iconsauce/postcss-iconsauce/issues"
+  },
+  "homepage": "https://github.com/iconsauce/postcss-iconsauce#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iconsauce/postcss-iconsauce.git"
+  },
+  "keywords": [
+    "font",
+    "icon",
+    "iconsauce",
+    "postcss",
+    "postcss-plugin"
+  ]
+}

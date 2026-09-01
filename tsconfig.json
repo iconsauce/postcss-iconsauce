@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "lib": ["esnext"],
-    "moduleResolution": "node",
     "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["esnext"],
+    "types": ["node", "jest"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "build",
+    "rootDir": ".",
+    "removeComments": true,
+    "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "removeComments": true,
-    "outDir": "lib",
-    "sourceMap": true
+    "target": "es2022"
   },
-  "include": [
-    "src",
-    ],
-  "exclude": [
-    "lib",
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "exclude": ["lib", "node_modules"]
 }
